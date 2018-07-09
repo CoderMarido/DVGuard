@@ -1,0 +1,5 @@
+name: DVGuard
+main: nl.marido.dvguard.Resource
+version: 1.0
+author: Marido
+description: DVGuard is an amazing safe WorldGuard addon for DeluxeVouchers.

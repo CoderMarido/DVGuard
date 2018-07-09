@@ -1,0 +1,5 @@
+update-checker: true
+blocked-regions:
+ spawnregion:
+ - blockedvoucherone
+ - blockedvouchertwo
