@@ -1,4 +1,4 @@
-update-checker: true
+check-updates: true
 blocked-regions:
  spawnregion:
  - blockedvoucherone

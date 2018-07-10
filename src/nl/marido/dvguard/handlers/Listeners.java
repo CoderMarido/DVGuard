@@ -11,8 +11,8 @@ import com.sk89q.worldguard.protection.managers.RegionManager;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 
 import nl.marido.deluxevouchers.events.VoucherRedeemEvent;
+import nl.marido.dvguard.DVGuard;
 import nl.marido.dvguard.DataHandler;
-import nl.marido.dvguard.Resource;
 
 public class Listeners implements Listener {
 
@@ -20,7 +20,7 @@ public class Listeners implements Listener {
 public void redeemListener(VoucherRedeemEvent event) {
 Player player = event.getPlayer();
 Location location = player.getLocation();
-WorldGuardPlugin worldguard = (WorldGuardPlugin) Resource.getInstance().getServer().getPluginManager().getPlugin("WorldGuard");
+WorldGuardPlugin worldguard = (WorldGuardPlugin) DVGuard.getInstance().getServer().getPluginManager().getPlugin("WorldGuard");
 RegionManager manager = worldguard.getRegionManager(location.getWorld());
 ApplicableRegionSet regionset = manager.getApplicableRegions(location);
 for (String name : DataHandler.regions) {
