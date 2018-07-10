@@ -16,23 +16,24 @@ import nl.marido.dvguard.DataHandler;
 
 public class Listeners implements Listener {
 
-@EventHandler
-public void redeemListener(VoucherRedeemEvent event) {
-Player player = event.getPlayer();
-Location location = player.getLocation();
-WorldGuardPlugin worldguard = (WorldGuardPlugin) DVGuard.getInstance().getServer().getPluginManager().getPlugin("WorldGuard");
-RegionManager manager = worldguard.getRegionManager(location.getWorld());
-ApplicableRegionSet regionset = manager.getApplicableRegions(location);
-for (String name : DataHandler.regions) {
-for (ProtectedRegion region : regionset.getRegions()) {
-if (region.toString().equalsIgnoreCase(name)) {
-if (DataHandler.getVouchers(name).contains(event.getVoucher())) {
-player.sendMessage("§cYou are not allowed to redeem that voucher here.");
-event.setCancelled(true);
-}
-}
-}
-}
-}
-	 
+	@EventHandler
+	public void redeemListener(VoucherRedeemEvent event) {
+		Player player = event.getPlayer();
+		Location location = player.getLocation();
+		WorldGuardPlugin worldguard = (WorldGuardPlugin) DVGuard.getInstance().getServer().getPluginManager()
+				.getPlugin("WorldGuard");
+		RegionManager manager = worldguard.getRegionManager(location.getWorld());
+		ApplicableRegionSet regionset = manager.getApplicableRegions(location);
+		for (String name : DataHandler.regions) {
+			for (ProtectedRegion region : regionset.getRegions()) {
+				if (region.toString().equalsIgnoreCase(name)) {
+					if (DataHandler.getVouchers(name).contains(event.getVoucher())) {
+						player.sendMessage("§cYou are not allowed to redeem that voucher here.");
+						event.setCancelled(true);
+					}
+				}
+			}
+		}
+	}
+
 }

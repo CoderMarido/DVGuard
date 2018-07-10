@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataHandler {
-	
-public static ArrayList<String> regions = new ArrayList<String>();
 
-public static void cache() {
-for (String region : DVGuard.getInstance().getConfig().getStringList("blocked-regions")) {
-regions.add(region);
-}
-}
+	public static ArrayList<String> regions = new ArrayList<String>();
 
-public static List<String> getVouchers(String region) {
-List<String> list = DVGuard.getInstance().getConfig().getStringList(region);
-return list;
-}
+	public static void cache() {
+		for (String region : DVGuard.getInstance().getConfig().getStringList("blocked-regions")) {
+			regions.add(region);
+		}
+	}
+
+	public static List<String> getVouchers(String region) {
+		List<String> list = DVGuard.getInstance().getConfig().getStringList(region);
+		return list;
+	}
 
 }
