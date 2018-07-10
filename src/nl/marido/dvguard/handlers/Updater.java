@@ -15,8 +15,7 @@ public class Updater {
 			try {
 				URL checkurl = new URL("https://api.spigotmc.org/legacy/update.php?resource=58540");
 				URLConnection connection = checkurl.openConnection();
-				String latestversion = new BufferedReader(new InputStreamReader(connection.getInputStream()))
-						.readLine();
+				String latestversion = new BufferedReader(new InputStreamReader(connection.getInputStream())).readLine();
 				String currentversion = DVGuard.getInstance().getDescription().getVersion();
 				if (latestversion.equals(currentversion)) {
 					System.out.println("You are running the latest version of DVGuard (" + latestversion + ").");
