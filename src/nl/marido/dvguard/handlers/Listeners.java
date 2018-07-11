@@ -27,7 +27,7 @@ public class Listeners implements Listener {
 			for (ProtectedRegion region : regionset.getRegions()) {
 				if (region.toString().equalsIgnoreCase(name)) {
 					if (DataHandler.getVouchers(name).contains(event.getVoucher())) {
-						player.sendMessage("§cYou are not allowed to redeem that voucher here.");
+						player.sendMessage(DataHandler.blockmessage);
 						event.setCancelled(true);
 					}
 				}

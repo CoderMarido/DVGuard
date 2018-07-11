@@ -1,4 +1,5 @@
 check-updates: true
+blocked-message: "§cYou are not allowed to redeem that voucher here."
 blocked-regions:
  spawnregion:
  - blockedvoucherone
