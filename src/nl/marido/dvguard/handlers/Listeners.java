@@ -25,9 +25,11 @@ public class Listeners implements Listener {
 		ApplicableRegionSet regionset = manager.getApplicableRegions(location);
 		for (String name : DataHandler.regions) {
 			for (ProtectedRegion region : regionset.getRegions()) {
-				if (region.toString().equalsIgnoreCase(name)) {
-					if (DataHandler.getVouchers(name).contains(event.getVoucher())) {
+				if (region.getId().equalsIgnoreCase(name)) {
+					String voucher = event.getVoucher();
+					if (DataHandler.getVouchers(name).contains(voucher)) {
 						player.sendMessage(DataHandler.blockmessage);
+						System.out.println("Blocked voucher " + voucher + " in region " + name + ".");
 						event.setCancelled(true);
 					}
 				}
