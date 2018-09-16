@@ -9,6 +9,7 @@ public class DataHandler {
 
 	public static ArrayList<String> regions;
 	public static String blockmessage;
+	public static String blockconsole;
 
 	public static void cache() {
 		regions = new ArrayList<String>();
@@ -17,6 +18,8 @@ public class DataHandler {
 		}
 		blockmessage = DVGuard.getInstance().getConfig().getString("blocked-message");
 		blockmessage = ChatColor.translateAlternateColorCodes('&', blockmessage);
+		blockconsole = DVGuard.getInstance().getConfig().getString("blocked-console");
+		blockconsole = ChatColor.translateAlternateColorCodes('&', blockconsole);
 	}
 
 	public static List<String> getVouchers(String region) {

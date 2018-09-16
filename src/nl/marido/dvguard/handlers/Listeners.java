@@ -29,7 +29,11 @@ public class Listeners implements Listener {
 					String voucher = event.getVoucher();
 					if (DataHandler.getVouchers(name).contains(voucher)) {
 						player.sendMessage(DataHandler.blockmessage);
-						System.out.println("Blocked voucher " + voucher + " in region " + name + ".");
+						String console = DataHandler.blockconsole;
+						console = console.replaceAll("%player%", player.getName());
+						console = console.replaceAll("%voucher%", event.getVoucher());
+						console = console.replaceAll("%region%", name);
+						DVGuard.getInstance().getServer().getConsoleSender().sendMessage(console);
 						event.setCancelled(true);
 					}
 				}

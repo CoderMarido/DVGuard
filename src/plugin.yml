@@ -1,5 +1,6 @@
 name: DVGuard
 main: nl.marido.dvguard.DVGuard
-version: 1.3
+version: 1.4
 author: Marido
 description: DVGuard is an amazing safe WorldGuard addon for DeluxeVouchers.
+depends: [WorldGuard, WorldEdit, DeluxeVouchers]

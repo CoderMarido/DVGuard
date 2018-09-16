@@ -4,3 +4,4 @@ blocked-regions:
  spawnregion:
  - blockedvoucherone
  - blockedvouchertwo
+blocked-console: "&6BLOCKED: %player% tried to redeem %voucher% in %region%."
